@@ -35,6 +35,8 @@ export default {
 /**
  * 如何获取到我的权限:
  *  1、用户登录成功之后，根据token调取接口getInfo()获取到用户roles并存入vuex;
+ * 
+ * 
  */
 
 </script>

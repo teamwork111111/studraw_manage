@@ -1,13 +1,6 @@
 <template>
 	 <div class='footer'>
-        <p class="intro rflex">
-            <span>{{ $t('commons.xiaoai') }}Admin</span>
-            <a :href='github' target="_blank">
-               <icon-svg icon-class="iconGithub" />
-            </a>
-            <span>xgd5120({{ $t('commons.wechatNumber') }})</span>
-        </p>
-        <p class="beian">黔ICP备19xxxxx号</p>
+        <p class="beian">凯里学院大数据工程学院    黔ICP备19xxxxx号</p>
     </div>
 </template>
 

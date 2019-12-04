@@ -4,45 +4,7 @@
             <top-menu></top-menu>
             <div class="userinfo-right rflex">
                 <div class="notify-row">
-                    <ul class="top-menu">
-                        <li class="li-badge">
-                            <el-tooltip class="item" effect="dark" content="访问github" placement="top">
-                                <a :href='github' target="_blank">
-                                      <icon-svg icon-class="iconGithub" />
-                                </a>
-                            </el-tooltip>
-                        </li>
-                        <li class="li-badge">
-                            <a :href='github' target="_blank" v-popover:qcode>
-                                <icon-svg icon-class="iconwechat" />
-                                <el-popover
-                                    ref="qcode"
-                                    popper-class="qcodepopper"
-                                    placement="bottom"
-                                    trigger="hover">
-                                        <div class="wechat-area cflex">
-                                            <p class="titles">加我微信</p>
-                                            <img :src="wechat.wechatImg" alt="加我微信"  />
-                                        </div>
-                               </el-popover>
-                            </a>
-                        </li>
-                        <li class="li-badge">
-                            <a :href='github' target="_blank" v-popover:qqcode>
-						        <icon-svg icon-class="iconqq" />
-                                 <el-popover
-                                    ref="qqcode"
-                                    popper-class="qcodepopper"
-                                    placement="bottom"
-                                    trigger="hover">
-                                        <div class="wechat-area cflex">
-                                            <p class="titles">加入qq群</p>
-                                            <img :src="qq.qqImg" alt="加入qq群"  />
-                                        </div>
-                                </el-popover>
-                            </a>
-                        </li>
-                    </ul>
+                凯里学院学生安全管理系统
                 </div>
                 <div class="userinfo">
                     <el-menu 
@@ -134,18 +96,6 @@
           mounted(){
           },
           methods:{
-              showWechat(){
-                  this.wechat.isWechat = true;
-              },
-              hideWechat(){
-                 this.wechat.isWechat = false;
-              },
-              showQq(){
-                  this.qq.isQq = true;
-              },
-              hideQq(){
-                  this.qq.isQq = false;
-              },
               logout(){
                   this.$store.dispatch('LogOut').then(() => {
                       location.reload();
@@ -212,7 +162,7 @@
        border:1px solid;
     }
     .userinfo-right{
-        width:320px;
+        width:420px;
         padding: 0 10px;
         justify-content: space-between;
     }

@@ -35,7 +35,7 @@ export default {
     }else if(data.username === 'editor'){
         userList = {
             token:'editor',
-            name:'肖光鼎',
+            name:'赵晓编',
         }
     }else{
        return {

@@ -1,7 +1,7 @@
 const zh = {
     // layout
     commons: {
-      xiaoai: 'wudi.',
+      xiaoai: 'Wudi.',
       admin: 'Admin',
       editor: 'Editor',
       quit: 'Sign Out',

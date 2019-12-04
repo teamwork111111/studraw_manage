@@ -1,8 +1,8 @@
 <template>
    <div class="menu_left cflex" :style="{width:sidebar.width+'px'}">
         <div class="menu_page_top rflex">
-            <img :class='["logo",{"closeLogo":!sidebar.opened}]' :src="logo" alt="无敌" >
-            <span class='title' v-show="sidebar.opened">{{$t('commons.xiaoai')}}<i>wudi</i></span>
+            <img :class='["logo",{"closeLogo":!sidebar.opened}]' :src="logo" >
+            <span class='title' v-show="sidebar.opened">学生安全</span>
         </div>
         <div class="menu_page_bottom is-scroll-left">
             <el-menu 

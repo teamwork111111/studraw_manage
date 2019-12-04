@@ -3,8 +3,8 @@
 	  	<transition name="form-fade" mode="in-out">
 	  		<section class="form_contianer">
 			     <div class='titleArea rflex'>
-					<img class="logo" :src="logo" alt="无敌wudi">
-					<span class='title'>学生安全管理系统登录<i></i></span>
+					<img class="logo" :src="logo" alt="学生安全系统">
+					<span class='title'>学生安全管理系统</span>
 				</div>
 		    	<el-form :model="loginForm" :rules="rules" ref="loginForm" class="loginForm">
 					<el-form-item prop="username" class="login-item">
@@ -16,11 +16,11 @@
 						<el-input @keyup.enter.native ="submitForm('loginForm')" class="area" type="password" placeholder="密码" v-model="loginForm.password"></el-input>
 					</el-form-item>
 					<el-form-item>
-				    	<el-button type="primary"  @click="submitForm('loginForm')" class="submit_btn">SIGN IN</el-button>
+				    	<el-button type="primary"  @click="submitForm('loginForm')" class="submit_btn">登陆</el-button>
 				  	</el-form-item>
 					<div class="tiparea">
 						<p class="wxtip">温馨提示：</p>
-						<p class="tip">用户名为：admin</span></p>
+						<p class="tip">用户名为：admin</p>
 						<p class="tip">密码为：123456</p>
 					</div>
 					<div class="sanFangArea">

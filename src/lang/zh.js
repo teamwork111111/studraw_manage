@@ -3,7 +3,7 @@ const zh = {
     commons: {
       xiaoai: '无敌',
       admin: '管理员',
-      editor: '肖光鼎',
+      editor: '西瓜刀',
       quit: '退出',
       hi: '您好',
       index: '首页',
