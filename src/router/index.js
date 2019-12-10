@@ -91,6 +91,27 @@ export const asyncRouterMap = [
 		]
 	},
 	{
+		path:'/share',
+		name: 'share',
+		component:Layout,
+		meta: {
+			title:'分享功能',
+			icon: 'iconshare',
+		},
+		noDropdown:true,
+		children:[
+			{
+				path:'share', 
+				meta:{
+				  title:'分享功能', 
+				  icon:'iconshare',
+				  routerType:'leftmenu'
+				},
+				component: () => import('@/page/share'),
+			}
+		]
+	},
+	{
 	  path:'/infoManage',
 	  name: 'infoManage',
 	  meta: {
@@ -134,6 +155,71 @@ export const asyncRouterMap = [
 			children:filterTopRouterMap('infoModify')
 		 }
 	  ]
+	},
+	{
+		path:'/fundManage',
+		name: 'fundManage',
+		meta: {
+		  title:'资金管理',
+		  icon: 'iconpay3',
+		},
+		component:Layout,
+		children:[
+		  {
+			path:'fundList',
+			name:'fundList',
+			meta: {
+					title:'资金流水',
+					routerType:'leftmenu'
+			},
+			component: () => import('@/page/fundList/fundList'),
+		  },
+		  {
+			path:'chinaTabsList',
+			name:'chinaTabsList',
+			meta: {
+				title:'区域投资',
+				routerType:'leftmenu'
+			},
+			component: () => import('@/page/fundList/chinaTabsList'),
+			}
+		]
+	},
+	{
+		path:'/fundData',
+		name: 'fundData',
+		meta: {
+		  title:'资金数据',
+		  icon: 'iconecharts',
+		},
+		component:Layout,
+		redirect: '/fundData/fundPosition',
+		children:[
+		  {
+			 path:'fundPosition',
+			 name:'fundPosition',
+			 meta: {
+				  title:'投资分布'
+			 },
+			 component: () => import('@/page/fundData/fundPosition')
+		  },
+		  {
+			  path:'typePosition',
+			  name:'typePosition',
+			  meta: {
+				   title:'项目分布'
+				},
+				component: () => import('@/page/fundData/typePosition')
+		   },
+		   {
+				path:'incomePayPosition',
+				name:'incomePayPosition',
+				meta: {
+					title:'收支统计'
+				},
+				component: () => import('@/page/fundData/incomePayPosition')
+		    }
+		]
 	},
 	{
     path: '/permission',

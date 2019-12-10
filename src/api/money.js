@@ -10,8 +10,12 @@ export function getMoneyIncomePay(params) {
 
 export function addMoney(params) {
   return request({
-    url: '/money/add',
-    method: 'get',
+    // url: '/money/add',
+	headers:{
+		"Content-type":"application/x-www-form-urlencoded;charset=UTF-8"
+	},
+	url:'/hello/test',
+    method: 'post',
     params: params
   })
 }

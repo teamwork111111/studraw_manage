@@ -21,6 +21,7 @@ const zh = {
       infoModify2:'InfoModify2',
       infoModify3:'InfoModify3',
       fundManage: 'Money',
+	  fundTest:'mytest',
       fundList: 'MoneyList',
       chinaTabsList: 'AreaList',
       fundData: 'FundData',

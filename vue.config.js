@@ -7,8 +7,8 @@ const resolve = dir => {
   return path.join(__dirname, dir);
 };
 
-const env = process.env.NODE_ENV
-let target = process.env.VUE_APP_URL  // development和production环境是不同的
+// const env = process.env.NODE_ENV;
+// let target = process.env.VUE_APP_URL ; // development和production环境是不同的
 
 const cdn = {
   // 开发环境
@@ -52,10 +52,11 @@ module.exports = {
     host: '0.0.0.0',
     port: 8808
     // 由于本项目数据通过easy-mock和mockjs模拟，不存在跨域问题，无需配置代理;
-    // proxy: { 
-    //   '/v2': {
+    // proxyTable: { 
+    //   '/api': {
     //       target: target,
-    //       changeOrigin: true
+    //       changeOrigin: true,
+
     //   }
     // }
   },

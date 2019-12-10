@@ -3,8 +3,8 @@
 	  	<transition name="form-fade" mode="in-out">
 	  		<section class="form_contianer">
 			     <div class='titleArea rflex'>
-					<img class="logo" :src="logo" alt="学生安全系统">
-					<span class='title'>学生安全管理系统</span>
+					<img class="logo" :src="logo" alt="学生画像系统">
+					<span class='title'>学生画像系统</span>
 				</div>
 		    	<el-form :model="loginForm" :rules="rules" ref="loginForm" class="loginForm">
 					<el-form-item prop="username" class="login-item">

@@ -5,7 +5,7 @@ import { getToken } from '@/utils/auth'
 
 // 创建axios实例
 let service =  axios.create({
-  baseURL: process.env.BASE_API, // api的base_url
+  baseURL: "http://localhost:8000",//process.env.BASE_API, // api的base_url
   timeout: 5000 // 请求超时时间
 })
 // request拦截器
