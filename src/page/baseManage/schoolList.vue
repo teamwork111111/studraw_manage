@@ -21,7 +21,7 @@
             </el-table-column>
 			<el-table-column
 			prop="logo"
-			label="学校logo"
+			label="学校图片"
 			align='center'
 			width="80">
 			</el-table-column>
