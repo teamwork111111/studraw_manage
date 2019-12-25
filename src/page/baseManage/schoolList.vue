@@ -161,12 +161,13 @@
             },
             // 获取资金列表数据
             getMoneyList(){
-                const para = Object.assign({},this.incomePayData,this.search);
-                getMoneyIncomePay(para).then(res => {
-                     this.loading = false;
-                     this.pageTotal = 20
-                     this.tableData = res.data
-                })
+                const para = Object.assign({},'xx','ss');
+				getMoneyIncomePay(para).then(res => {
+					 this.loading = false;
+                     this.pageTotal = 20;
+                     this.tableData = res;
+               });
+			   
             },
             // 显示资金弹框
             showAddFundDialog(val){

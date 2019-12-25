@@ -1,6 +1,7 @@
 import request from '@/utils/axios'
 
 export function getMoneyIncomePay(params) {
+	console.log("params===="+params);
   return request({
     url: 'http://47.95.4.199:8081/api/school/getAllSchool',
     method: 'get',
