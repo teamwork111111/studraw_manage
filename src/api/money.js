@@ -2,7 +2,7 @@ import request from '@/utils/axios'
 
 export function getMoneyIncomePay(params) {
   return request({
-    url: '/money/get',
+    url: 'http://47.95.4.199:8081/api/school/getAllSchool',
     method: 'get',
     params: params
   })
