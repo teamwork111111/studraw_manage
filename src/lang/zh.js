@@ -21,6 +21,8 @@ const zh = {
       infoModify2:'修改信息子菜单2',
       infoModify3:'修改信息子菜单3',
       fundManage: '资金管理',
+	  baseManage: '基础数据管理',
+	  schoolList: '学校信息列表',
 	  fundTest:'我要测试',
       fundList: '资金流水',
       chinaTabsList: '区域投资',

@@ -70,109 +70,22 @@ export default new Router({
   //异步路由（需要权限的页面）
 export const asyncRouterMap = [
 	{
-		path:'/userManager',
-		name: 'userManage',
-		component:Layout,
+		path:'/baseManage',
+		name: 'baseManage',
 		meta: {
-			title:'用户管理',
-			icon: 'iconuser',
-		},
-		noDropdown:true,
-		children:[
-			{
-				path:'userList', 
-				meta:{
-					title:'用户管理', 
-					icon:'iconuser',
-				  routerType:'leftmenu'
-				},
-				component: () => import('@/page/userList/userList'),
-			}
-		]
-	},
-	{
-		path:'/share',
-		name: 'share',
-		component:Layout,
-		meta: {
-			title:'分享功能',
-			icon: 'iconshare',
-		},
-		noDropdown:true,
-		children:[
-			{
-				path:'share', 
-				meta:{
-				  title:'分享功能', 
-				  icon:'iconshare',
-				  routerType:'leftmenu'
-				},
-				component: () => import('@/page/share'),
-			}
-		]
-	},
-	{
-	  path:'/infoManage',
-	  name: 'infoManage',
-	  meta: {
-			title:'信息管理',
-			icon: 'iconinfo',
-	  },
-	  component:Layout,
-	  children:[
-		{
-		   path:'infoShow',
-		   name:'infoShow',
-		   meta: {
-					title:'个人信息',
-					icon: 'iconinfo',
-					routerType:'leftmenu',
-					titleList:[
-						{"path":"infoShow1","title":"个人信息子菜单1"},
-						{"path":"infoShow2","title":"个人信息子菜单2"},
-						{"path":"infoShow3","title":"个人信息子菜单3"},
-						{"path":"infoShow4","title":"个人信息子菜单4"},
-						{"path":"infoShow5","title":"个人信息子菜单5"}
-					]	
-			 },
-	  	 component:Content,
-			 children:filterTopRouterMap('infoShow')
-		},
-		{
-			path:'infoModify',
-			name:'infoModify',
-			meta: {
-				title:'修改信息',
-				icon: 'iconinfo',
-				routerType:'leftmenu',
-				titleList:[
-					{"path":"infoModify1","title":"修改信息子菜单1"},
-					{"path":"infoModify2","title":"修改信息子菜单2"},
-					{"path":"infoModify3","title":"修改信息子菜单3"}
-				]
-			},
-			component:Content,
-			children:filterTopRouterMap('infoModify')
-		 }
-	  ]
-	},
-	{
-		path:'/fundManage',
-		name: 'fundManage',
-		meta: {
-		  title:'资金管理',
+		  title:'基础数据管理',
 		  icon: 'iconpay3',
 		},
 		component:Layout,
 		children:[
 		  {
-			path:'fundList',
-			name:'fundList',
+			path:'schoolList',
+			name:'schoolList',
 			meta: {
-					title:'资金流水',
+					title:'学校信息列表',
 					routerType:'leftmenu'
 			},
-			component: () => import('@/page/fundList/fundList'),
+			component: () => import('@/page/baseManage/schoolList'),
 		  },
 		  {
 			path:'chinaTabsList',
@@ -225,7 +138,7 @@ export const asyncRouterMap = [
     path: '/permission',
 		name: 'permission',
 		meta: {
-      title: '权限设置',
+      title: '系统管理',
       icon: 'iconpermission',
       roles: ['admin', 'editor'] // you can set roles in root nav
     },
@@ -248,35 +161,6 @@ export const asyncRouterMap = [
       },
       component: () => import('@/page/permission/directive'),
     }]
-  },
-  {
-    path: '/error',
-    component: Layout,
-    name: 'errorPage',
-    meta: {
-      title: '错误页面', 
-      icon: 'iconError'
-    },
-    children: [
-			{  
-				path: '401', 
-				name: 'page401', 
-				component: () => import('@/page/errorPage/401'), 
-				meta: { 
-					title: '401', 
-					noCache: true 
-			  }
-			},
-			{
-				path: '404', 
-				name: 'page404', 
-				component: () => import('@/page/errorPage/404'), 
-				meta: { 
-					title: '404', 
-					noCache: true
-				}
-			}
-    ]
   },
 	{ path: '*', redirect: '/404', hidden: true }
 	];
