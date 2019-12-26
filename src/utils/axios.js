@@ -47,7 +47,7 @@ service.interceptors.response.use(
     //   }
     //   return Promise.reject('error')
     // } else { // res.code === 200,正常返回数据
-		// console.log("ssss:"+JSON.stringify(response.data[0]));
+		console.log("response:"+JSON.stringify(response.data));
         return response.data
     // }
   },

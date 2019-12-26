@@ -1,7 +1,7 @@
 import request from '@/utils/axios'
 
 export function getMoneyIncomePay(params) {
-	console.log("params===="+params);
+	console.log("getMoneyIncomePay===="+JSON.stringify(params));
   return request({
     url: 'http://47.95.4.199:8081/api/school/getAllSchool',
     method: 'get',
@@ -11,19 +11,16 @@ export function getMoneyIncomePay(params) {
 
 export function addMoney(params) {
   return request({
-    // url: '/money/add',
-	headers:{
-		"Content-type":"application/x-www-form-urlencoded;charset=UTF-8"
-	},
-	url:'/hello/test',
+    url: 'http://47.95.4.199:8081/api/school/addSchool',
     method: 'post',
     params: params
   })
 }
 
 export function removeMoney(params) {
+	console.log("removeMoney===="+JSON.stringify(params));
   return request({
-    url: '/money/remove',
+    url: 'http://47.95.4.199:8081/api/school/delSchool',//http://47.95.4.199:8081/swagger-ui.html
     method: 'get',
     params: params
   })
@@ -40,7 +37,7 @@ export function batchremoveMoney(params) {
 
 export function updateMoney(params) {
   return request({
-    url: '/money/edit',
+    url: 'http://47.95.4.199:8081/api/school/uptSchool',
     method: 'get',
     params: params
   })

@@ -1,11 +1,13 @@
 <template>
     <div class="fillcontain">
+		<search-item @showDialog="showAddFundDialog" @searchList="getMoneyList" @onBatchDelMoney="onBatchDelMoney"></search-item>
         <div class="table_container">
             <el-table
                 v-loading="loading"
                 :data="tableData"
                 style="width: 100%"
                 align='center'
+				@select="selectTable"
                 >
               <el-table-column
                 v-if="idFlag"
@@ -64,15 +66,18 @@
             </el-table-column>
             </el-table>
             <pagination :pageTotal="pageTotal" @handleCurrentChange="handleCurrentChange" @handleSizeChange="handleSizeChange"></pagination>
-        </div>
+			<addFundDialog  v-if="addFundDialog.show" :isShow="addFundDialog.show" :dialogRow="addFundDialog.dialogRow"  @getFundList="getMoneyList"  @closeDialog="hideAddFundDialog"></addFundDialog>
+		</div>
     </div>
 </template>
 
 <script>
     import { mapGetters } from "vuex";
     import * as mutils from '@/utils/mUtils';
+	import SearchItem from "./components/searchItem";
+	import AddFundDialog from "./components/addFundDialog";
     import Pagination from "@/components/pagination";
-    import { getMoneyIncomePay} from "@/api/money";
+    import { getMoneyIncomePay,removeMoney} from "@/api/money";
 
     export default {
         data(){
@@ -146,6 +151,8 @@
             }
         },
         components:{
+			SearchItem,
+			AddFundDialog,
             Pagination
         },
         computed:{
@@ -171,7 +178,7 @@
             },
             // 显示资金弹框
             showAddFundDialog(val){
-                this.$store.commit('SET_DIALOG_TITLE', val)
+                this.$store.commit('SET_DIALOG_TITLE', val);
                 this.addFundDialog.show = true;
             },
             hideAddFundDialog(){
@@ -198,8 +205,25 @@
             // 编辑操作方法
             onEditMoney(row){
                 this.addFundDialog.dialogRow = {...row};
-                this.showAddFundDialog();
+                this.showAddFundDialog('edit');
             },
+			// 删除数据
+			onDeleteMoney(row){
+			    this.$confirm('确认删除该记录吗1?', '提示', {
+			        type: 'warning'
+			    }).then(() => {
+			        const para = { id: row.id };
+					console.log(para);
+			        removeMoney(para).then(res => {
+			            this.$message({
+			                message: '删除成功',
+			                type: 'success'
+			            });
+			            this.getMoneyList()
+			        })
+			    })
+			    .catch(() => {})
+			},
             onBatchDelMoney(){},
             // 用户全选checkbox时触发该事件
             selectAll(val){
