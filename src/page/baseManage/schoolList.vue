@@ -90,25 +90,14 @@
                 editid:'',
                 rowIds:[],
                 sortnum:0,
-                format_type_list: {
-                    0: '提现',
-                    1: '提现手续费',
-                    2: '提现锁定',
-                    3: '理财服务退出',
-                    4: '购买宜定盈',
-                    5: '充值',
-                    6: '优惠券',
-                    7: '充值礼券',
-                    8: '转账'
-                },
-                addFundDialog:{  
+                addFundDialog:{
                     show:false,
                     dialogRow:{}
                 },
                 incomePayData:{
-                    page:1,
-                    limit:20,
-                    name:''
+                    pageNum:1,
+                    pageSize:20,
+                    schoolname:''
                 },
                 pageTotal:0,
                 // 用于列表筛选
@@ -168,11 +157,11 @@
             },
             // 获取资金列表数据
             getMoneyList(){
-                const para = Object.assign({},'xx','ss');
+                const para = Object.assign({},this.incomePayData,this.search);
 				getMoneyIncomePay(para).then(res => {
 					 this.loading = false;
-                     this.pageTotal = 20;
-                     this.tableData = res;
+                     this.pageTotal = res.total;
+                     this.tableData = res.list;
                });
 			   
             },
@@ -186,12 +175,12 @@
             },
             // 上下分页
             handleCurrentChange(val){
-                this.incomePayData.page = val;
+                this.incomePayData.pageNum = val;
                 this.getMoneyList()
             },
             // 每页显示多少条
             handleSizeChange(val){
-                this.incomePayData.limit = val;
+                this.incomePayData.pageSize = val;
                 this.getMoneyList()
             },
             getPay(val){
@@ -209,7 +198,7 @@
             },
 			// 删除数据
 			onDeleteMoney(row){
-			    this.$confirm('确认删除该记录吗1?', '提示', {
+			    this.$confirm('确认删除该记录吗?', '提示', {
 			        type: 'warning'
 			    }).then(() => {
 			        const para = { id: row.id };

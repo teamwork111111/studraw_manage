@@ -7,10 +7,10 @@
             ref="search_data" 
             class="demo-form-inline search-form">
             <el-form-item label="">
-                <el-input v-model="search_data.name" placeholder="用户名"  @keyup.enter.native='onScreeoutMoney("search_data")'></el-input>
+                <el-input v-model="search_data.schoolname" placeholder="学校名称"  @keyup.enter.native='onScreeoutMoney("search_data")'></el-input>
             </el-form-item>
             <el-form-item>
-                <el-button type="primary" size ="mini" icon="search" @click='onScreeoutMoney("search_data")'>筛选</el-button>
+                <el-button type="primary" size ="mini" icon="search" @click='onScreeoutMoney("search_data")'>查询</el-button>
             </el-form-item>
 
             <el-form-item class="btnRight">
@@ -28,13 +28,11 @@
       data(){
           return {
             search_data:{
-                startTime:'',
-                endTime:'',
-                name:''
+                schoolname:''
             },
             rules: {
-                name: [
-                    { required: true, message: '请输入用户名', trigger: 'blur' },
+                schoolname: [
+                    { required: true, message: '请输入学校名称', trigger: 'blur' },
                 ]
             }
           }
