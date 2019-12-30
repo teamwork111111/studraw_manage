@@ -35,7 +35,7 @@
             </el-table-column>
               <el-table-column
                 prop="code"
-                label="学校代码"
+                label="学校代码code"
                 align='center'
                 >
             </el-table-column>
